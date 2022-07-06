@@ -10,6 +10,6 @@ yellow='\033[0;33m'
 no_color='\033[0m'
 
 echo -e "\n${yellow}Executing pre-push hook...${no_color}\n"
-echo -e "\n${green} [Husky] pre-push\"
+echo \"${green} [Husky] pre-push\"
 npm run lint
 echo -e "${green}Git pre-push hook was successful!${no_color}\n"
