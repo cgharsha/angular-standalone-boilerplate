@@ -1,13 +1,21 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AppModule } from './app/app.module';
+import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { APP_ROUTES } from './app/app-routing';
 
 if (environment.production) {
     enableProdMode();
 }
 
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch((err) => console.error(err));
+const routes: Routes = [];
+
+// bootstrapApplication(AppComponent, {
+//     providers: [importProvidersFrom(RouterModule.forRoot(routes))],
+// });
+
+bootstrapApplication(AppComponent, {
+    providers: [importProvidersFrom(RouterModule.forRoot(APP_ROUTES))],
+});
