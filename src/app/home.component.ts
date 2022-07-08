@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule],
-    template: ` <p>home works!</p> `,
+    imports: [CommonModule, LoginComponent],
+    template: ` <app-login></app-login> `,
 })
 export class HomeComponent implements OnInit {
     // constructor() { }

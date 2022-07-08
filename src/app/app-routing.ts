@@ -11,4 +11,19 @@ export const APP_ROUTES: Routes = [
         path: 'home',
         component: HomeComponent,
     },
+    {
+        path: 'product',
+        loadComponent: () =>
+            import('./product.component').then((m) => m.ProductComponent),
+    },
+    {
+        path: 'admin',
+        loadChildren: () =>
+            import('./admin.route').then((mod) => mod.ADMIN_ROUTES),
+    },
+    {
+        path: '**',
+        redirectTo: 'home',
+        // component: PagenotfoundComponent,
+    },
 ];
